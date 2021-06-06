@@ -9,16 +9,16 @@ class Map
 
 private:
 
-	int mapGeneration[arraySize][arraySize]{ { 1,0,1,0,0,0,1,0,1,0 },
-												{ 1,0,0,0,1,1,0,1,0,1 },
-												{ 0,1,1,1,0,0,1,0,0,0 },
-												{ 0,0,0,1,0,1,1,0,1,1 },
-												{ 1,1,1,0,0,1,0,1,0,0 },
-												{ 0,1,1,0,0,1,0,0,0,1 },
-												{ 0,1,0,0,0,1,0,0,1,0 },
-												{ 0,1,1,0,0,1,1,0,0,0 },
-												{ 1,1,0,0,0,0,1,1,0,1 },
-												{ 0,1,0,0,1,0,0,0,1,0 } };;
+	int mapGeneration[arraySize][arraySize]{    { 0,0,0,0,0,0,0,1,1,0 },
+												{ 0,0,0,0,0,0,0,1,1,0 },
+												{ 0,0,0,0,0,0,0,0,0,0 },
+												{ 0,0,0,0,0,0,0,0,0,0 },
+												{ 0,0,0,0,0,0,0,0,0,0 },
+												{ 0,0,0,0,0,0,0,0,0,0 },
+												{ 0,0,0,0,0,0,0,0,0,0 },
+												{ 0,0,0,0,0,0,0,0,0,0 },
+												{ 0,0,0,0,0,0,0,0,0,0 },
+												{ 0,0,0,0,0,0,0,0,0,0 } };;
 
 	int mapGenerationNext[arraySize][arraySize];
 
@@ -31,7 +31,9 @@ public:
 	//determine how many neightbors their are near the cell
 	int determineNeighbors(int x, int y);
 	//generates the next generation of the cells
-	void CreateNextGeneration(int numberOfneighbors, int x, int y);
+	void createNextGeneration(int numberOfneighbors, int x, int y);
+	//takes the newly created map/generation and moves it on the old generation.
+	void swapMaps();
 
 };
 

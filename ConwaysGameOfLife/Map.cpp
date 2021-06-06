@@ -39,7 +39,7 @@
 				
 
 				numberOfNeighbors = determineNeighbors(x, y);
-				CreateNextGeneration(numberOfNeighbors, x, y);
+				createNextGeneration(numberOfNeighbors, x, y);
 				numberOfNeighbors = 0;
 				
 
@@ -47,6 +47,7 @@
 			
 
 		}
+		swapMaps();
 
 	}
 	// determines the neightbors of each cell
@@ -77,13 +78,13 @@
 
 	}
 	//creates the next generation 
-	void Map::CreateNextGeneration(int numberOfNeighbors, int x, int y)
+	void Map::createNextGeneration(int numberOfNeighbors, int x, int y)
 	{
-		if (numberOfNeighbors < 2)
+		if (numberOfNeighbors <= 2)
 		{
 			mapGenerationNext[y][x] = 0;
 		}
-		else if (numberOfNeighbors >= 2 || numberOfNeighbors <= 3)
+		else if (mapGeneration[y][x] == 1 && numberOfNeighbors >= 2 && numberOfNeighbors <= 3)
 		{
 			mapGenerationNext[y][x] = 1;
 		}
@@ -97,7 +98,17 @@
 		}
 
 	}
-
+	void Map::swapMaps()
+	{
+		for (int y{ 0 }; y < arraySize; ++y)
+		{
+			for (int x{ 0 }; x < arraySize; ++x)
+			{
+				Map::mapGeneration[y][x] = Map::mapGenerationNext[y][x];
+				
+			}
+		}
+	}
 
 
 	

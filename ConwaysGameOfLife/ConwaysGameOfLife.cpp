@@ -9,11 +9,19 @@
 int main()
 {
 	Map map{};
-
+	while (true)
+	{
+		map.printMap();
+		map.traverseMap();
+		std::cout << '\n';
+		map.printMap();
+		std::cout << '\n';
+	}
 
 	map.printMap();
 	map.traverseMap();
-	
+	std::cout << '\n';
+	map.printMap();
 
 
 
