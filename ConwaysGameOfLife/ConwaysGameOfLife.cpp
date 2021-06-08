@@ -6,22 +6,22 @@
 #include "constants.h"
 #include "Map.h"
 
+
 int main()
 {
+
 	Map map{};
+
+	map.generateStartingGeneraiton();
 	while (true)
 	{
 		map.printMap();
 		map.traverseMap();
 		std::cout << '\n';
-		map.printMap();
-		std::cout << '\n';
+		
 	}
 
-	map.printMap();
-	map.traverseMap();
-	std::cout << '\n';
-	map.printMap();
+	
 
 
 

@@ -2,6 +2,7 @@
 #define MAP_H
 
 #include "constants.h"
+#include <stdlib.h>  
 
 
 class Map
@@ -9,21 +10,14 @@ class Map
 
 private:
 
-	int mapGeneration[arraySize][arraySize]{    { 0,0,0,0,0,0,0,1,1,0 },
-												{ 0,0,0,0,0,0,0,1,1,0 },
-												{ 0,0,0,0,0,0,0,0,0,0 },
-												{ 0,0,0,0,0,0,0,0,0,0 },
-												{ 0,0,0,0,0,0,0,0,0,0 },
-												{ 0,0,0,0,0,0,0,0,0,0 },
-												{ 0,0,0,0,0,0,0,0,0,0 },
-												{ 0,0,0,0,0,0,0,0,0,0 },
-												{ 0,0,0,0,0,0,0,0,0,0 },
-												{ 0,0,0,0,0,0,0,0,0,0 } };;
+	int mapGeneration[arraySize][arraySize];
 
 	int mapGenerationNext[arraySize][arraySize];
 
 public:
 
+	//generate initial map
+	void generateStartingGeneraiton();
 	//print funciton a pointer to the map array to get printed out. Defined in Map.cpp
 	void printMap();
 	//this function goes through map and generates a new array for the next generation Defined in Map.cpp

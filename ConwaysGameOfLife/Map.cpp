@@ -1,7 +1,31 @@
 #include "Map.h"
 #include "constants.h"
 #include <iostream>
+#include <stdlib.h>  
 
+
+
+// an attemped at making a psuedo number randomizer where 40% of the time the answer is 1 and 60% where the anwer is 0
+void Map::generateStartingGeneraiton()
+{
+	
+
+	for (int y{};y < arraySize; ++y)
+	{
+		for (int x{}; x < arraySize; ++x)
+		{
+			int randomNumber = rand() % 1000;
+
+			if (randomNumber <= changePercentage)
+			{
+				Map::mapGeneration[y][x] = 1;
+			}
+			else
+				Map::mapGeneration[y][x] = 0;
+		}
+	}
+	
+}
 
 //print funciton a pointer to the map array to get printed out
 	void Map::printMap()
@@ -12,7 +36,7 @@
 			for (int x = 0; x < arraySize; ++x)
 			{
 				std::cout << Map::mapGeneration[y][x];
-				if (x == 9)
+				if (x == arraySize-1)
 				{
 					std::cout << '\n';
 				}
