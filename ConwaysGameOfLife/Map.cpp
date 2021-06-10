@@ -86,7 +86,8 @@ void Map::generateStartingGeneraiton()
 				{
 					continue;
 				}
-				else if (Map::mapGeneration[y + l][x + i] == 1)
+				//using +arraySize % arraySize to make sure that the boarders of the program loop around and interact with the correct column / row
+				else if (Map::mapGeneration[(y + l +arraySize) % arraySize][(x + i+ arraySize) % arraySize] == 1)
 				{
 					++numberOfNeighbors;
 				}
@@ -104,7 +105,7 @@ void Map::generateStartingGeneraiton()
 	//creates the next generation 
 	void Map::createNextGeneration(int numberOfNeighbors, int x, int y)
 	{
-		if (numberOfNeighbors <= 2)
+		if (numberOfNeighbors < 2)
 		{
 			mapGenerationNext[y][x] = 0;
 		}
