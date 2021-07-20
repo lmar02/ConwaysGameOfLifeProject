@@ -91,10 +91,6 @@ void Map::generateStartingGeneraiton()
 				{
 					++numberOfNeighbors;
 				}
-				
-					
-
-
 
 			}
 
